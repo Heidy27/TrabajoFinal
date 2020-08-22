@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Great+Vibes&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Rowdies&display=swap" rel="stylesheet">
+  
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  
+    <title>Instagram | Inicio</title>
+</head>
+<body>
+
+<!--  configuracion -->
+      
+<div id="containerConfiguracion" class="d-none">
+
+    <header id="header">
+
+        <nav class="menu">
+              
+          <div class="logo-box">
+              <h1 style="color: black;"><a href="#">Instagram</a></h1>
+           <span class ="btn-menu"><i class="fas fa-bars"></i></span>
+           </div>
+      
+           <div class="list-container">
+               <ul class="lists">
+              
+              <li><a href ="#" class="activo"><i class="fas fa-home"></i></a></li>
+              <li><a href="#"><i class="fas fa-comments"></i></a></li>
+              <li><a href="#" onclick="abrirmyperfil()"><i class="far fa-user-circle"></i></a></li>
+              <li><a href="#"><i class="fas fa-cog"></i></a></li>
+               </ul>
+            
+          </div>
+
+          <section  class="webdesigntuts-workshop">
+            <form action="" method="">		    
+                <input type="search" placeholder="Search...">		    	
+                <button><i class="fas fa-search"></i></button>
+            </form>
+     
+    </section>
+    </nav>
+
+    <div id="contentConfi">
+        <hr>
+        <input type="button" onclick="editarperfil()" value="Editar perfil">
+        <hr>
+        <input type="button" onclick="cambiarContraseña()" value="Cambiar Contraseña">
+        <hr>
+        <input type="button" onclick="apps()" value="Apps y sitios web">
+        <hr>
+        <input type="button" onclick="apps()" value="Correo electronico y SMS">
+        <hr>
+        <input type="button" onclick="apps()" value="Notificaciones push">
+        <hr>
+        <input type="button" onclick="apps()" value="Administrar contactos">
+        <hr>
+        <input type="button" onclick="apps()" value="Privacidad y seguridad">
+        <hr>
+        <input type="button" onclick="apps()" value="Actividad de inicio de sesion">
+        <hr>
+        <input type="button" onclick="apps()" value="Correos electronicos de instagram">
+        <hr>
+
+    </div>
+
+    <div id="contentEdit">
+        
+
+    </div>
+</div>
+
+
+<!-- 
+login -->
+
+ <div id="containerlogin" class="d-block container col-4 p-4" style="background-color: white; top: 15%;height: 60%;border-radius: 50px;">
+    <form id="formlogin" autocomplete="off"></form>
+      <h1 class="text-center" style="font-family: 'Great Vibes', sans-serif; color: black;">Instagram</h1>
+      
+        
+        
+
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at"></i></span>
+             </div>
+             <input  required type="email" id="email" class="form-control" placeholder="E-mail"> 
+          </div>
+
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key" ></i></span>
+            </div> 
+         <input  required type="password" id="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+         </div> 
+       
+         
+
+        <div class="text-center">
+            <button type="submit" class=" btn" style="font-family: 'Times New Roman', Times, serif; color: black;"  onclick="accesoCuenta()" >Iniciar Seccion</button>
+        </div>
+        <hr>
+
+    
+    </form>
+
+    <div class="iniciar-seccion bg-#ff00954d border rounded" style="font-family: 'Times New Roman', Times, serif; color: black;">
+        <p class="text-center">¿No tienes una cuenta? <a href="#" onclick="abrirRegistro()">Registrate</a></p>
+    </div>
+
+  </div>
+
+
+  <div id="containerRegistro" class="d-none centerForm">
+    <form id="form" autocomplete="off">
+        <i class="fab fa-instagram"></i><h1>Instagram | Registro</h1>
+        
+         <div class="input-group mb-3">
+             <div class="input-group-prepend">
+                 <span class="input-group-text"><i class="fas fa-user"></i></span>
+             </div> 
+         <input  required type="text" id="name" class="form-control" placeholder="Nombre de usuario"> 
+         </div>
+
+
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at"></i></span>
+             </div>
+             <input  required type="email" id="email" class="form-control" placeholder="E-mail"> 
+          </div>
+
+        
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+            </div> 
+         <input  required type="number" id="number" class="form-control" placeholder="Phone Number"> 
+         </div> 
+
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-home"></i></span>
+            </div> 
+         <input  required type="text" id="city" class="form-control" placeholder="Ciudad"> 
+         </div> 
+
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div> 
+         <input  required type="password" id="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+         </div> 
+
+
+         <div class="text-center">
+            <button type="submit" class=" btn" style="font-family: 'Times New Roman', Times, serif;">Registrate</button>
+        </div>
+        <hr>
+
+
+         <div class="iniciar-seccion bg-#ff00954d border rounded" style="font-family: 'Times New Roman', Times, serif; color: black;">
+            <p class="text-center">¿Tienes una cuenta? <a href="#" onclick="abrirlogin()">Inicia Seccion</a></p>
+        </div>
+
+    </form>
+  </div>
+
+
+<!--   inicio -->
+
+
+  <div id="containerInicio" class="d-none">
+
+  <section class="testimonios">
+    <div class="testimonios-title">
+
+    
+
+   </div>
+
+   <div class="box-testimonios">
+
+    <div class="card-testimonio">
+       <div class="card-img" onclick="miperfil()"><img src="img/42713184_167838727433523_3543827479284154368_o.jpg" alt=""></div>
+       <div class="testimonio-text">
+           <h4>Heidy27</h4>
+       </div>
+    </div>
+    <div class="card-testimonio">
+        <div class="card-img"><img src="img/43188996_1868754606506954_5971282620628074496_o.jpg" alt=""></div>
+        <div class="testimonio-text">
+            <h4>Wilnes25</h4>
+        </div>
+     </div>
+     <div class="card-testimonio">
+        <div class="card-img"><img src="img/pp (1).jpg" alt=""></div>
+        <div class="testimonio-text">
+            <h4>HenryRJ</h4>
+        </div>
+     </div>
+     <div class="card-testimonio">
+        <div class="card-img"><img src="img/pp.jpg" alt=""></div>
+        <div class="testimonio-text">
+            <h4>Jenny22</h4>
+        </div>
+     </div>
+     <div class="card-testimonio">
+        <div class="card-img"><img src="img/piel-morena.jpg" alt=""></div>
+        <div class="testimonio-text">
+            <h4>Laura.5</h4>
+        </div>
+     </div>
+
+ </div>
+</section>
+
+</main>
+
+
+  <header id="header">
+
+  <nav class="menu">
+        
+    <div class="logo-box">
+        <h1 style="color: black;"><a href="#">Instagram</a></h1>
+     <span class ="btn-menu"><i class="fas fa-bars"></i></span>
+     </div>
+
+     <div class="list-container">
+         <ul class="lists">
+        
+        <li><a href ="#" class="activo"><i class="fas fa-home"></i></a></li>
+        <li><a href="#"><i class="fas fa-comments"></i></a></li>
+        <li><a href="#" onclick="abrirmyperfil()"><i class="far fa-user-circle"></i></a></li>
+        <li><a href="#"><i class="fas fa-cog"></i></a></li>
+         </ul>
+        
+
+    </div>
+
+    <section  class="webdesigntuts-workshop">
+        <form action="" method="">		    
+            <input type="search" placeholder="Search...">		    	
+            <button><i class="fas fa-search"></i></button>
+        </form>
+    </section>
+
+</nav>
+
+ <!-- IMG Header-->
+
+<!-- PUBLICACIONES -->
+
+<div class="contenido container d-flex justify-content-around" id="sectionPublicaciones">
+    <div class="publicaciones col-8" id="contentPublicaciones">
+      
+    </div>
+    <div class="info-perfil col-3">
+      <div class="perfil">
+          <div class="d-flex flex-column justify-content-center">
+              <div class="photoProfile text-center mb-3">
+                  <img src="" id="photoProfile" class="rounded-circle" alt="" width="120" height="120">
+              </div>
+              <div class="info-UseName text-center">
+                  <p id="userSesion"></p>
+              </div>
+          </div>
+
+<div class="anadir-publicaciones text-center">
+    <button type="button" class="boton btn-dark" style="font-size: 22px; background:var(--red) ; font-family: 'Times New Roman', Times, serif; " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fas fa-plus"></i></button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Añadir publicación</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Imagen</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile" aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile">Choose file</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message-text" class="col-form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion-image"></textarea>
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-secondary" onclick="addPicture()">Subir</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+ </div>
+
+ </div>
+
+<div id="sectionPerfil" class="container d-none">
+        <div class="infoPerfil mb-3 d-flex justify-content-center">
+          <div class="card mb-3" style="max-width: 500px;">
+            <div class="d-flex">
+              <div class="col-4 rounded-circle imagenPerfil text-center">
+                <img src="" id="perfilFoto" class="card-img mb-3 rounded-circle" alt="..." alt="" width="120" height="120">
+                <button type="button" class="btn btn-dark" onclick="abrirConfig()" id="Editar">Editar <i class="fas fa-cog"></i></button>
+              </div>
+              <div class="perfilInformación">
+                <div class="card-body">
+                  <h5 class="card-title" id="userName"></h5>
+                  <p class="card-text"><small id="correoElectronico" class="text-muted"></small></p>
+                  <p class="card-text" id="biografia"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="publicacionesPerfil container" style="max-width: 1000px;">
+          <h5 class="text-center text-uppercase mb-3">publicaciones <i class="fas fa-images"></i></h5>
+
+          <div class="row row-cols-1 row-cols-md-3 border-top" id="fotosPerfil">
+          </div>
+  
+        </div>
+      </div>
+
+      <div class="container d-none" id="sectionConfig">
+        <div class="row">
+          <div class="col-3 bg-white border rounded p-0">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#editPerfil" role="tab" aria-controls="v-pills-home" aria-selected="true">Editar perfil</a>
+              <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#editContraseña" role="tab" aria-controls="v-pills-profile" aria-selected="false">Cambiar contraseña</a>
+            </div>
+          </div>
+          <div class="col-9 bg-white border rounded">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="editPerfil" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <form class="pt-4 col-9">
+                  <div class="form-group row">
+                    <img src="" alt="..." class="rounded-circle col-sm-2 col-form-img" id="imgProfileConfirg">
+                    <div class="col-sm-10">
+                      <h5 id="userConfigPerfil"></h5>
+                      <span class="enlaces" onclick="eliminarFoto()">Eliminar foto</span>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputFotoPerfil" class="col-sm-2 col-form-label">Foto de perfil</label>
+                    <div class="input-group col-sm-10">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputFotoPerfil" aria-describedby="inputGroupFileAddon04">
+                        <label class="custom-file-label" for="inputGroupFile04">Elija un archivo</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="nombreConfig" class="col-sm-2 col-form-label">Nombres</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="nombreConfig">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="apellidosConfig" class="col-sm-2 col-form-label">Apellidos</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="apellidosConfig">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="biografiaConfig" class="col-sm-2 col-form-label">Presentación</label>
+                    <div class="col-sm-10">
+                      <textarea class="form-control" id="biografiaConfig"></textarea>
+                    </div>
+                  </div>
+                
+                  <div class="form-group">
+                    <div class="text-right">
+                      <button type="button" class="btn btn-primary bg-dark" onclick="editProfilePicture()">Guardar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              
+              <div class="tab-pane fade" id="editContraseña" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                <form class="pt-4 col-9">
+                  <div class="form-group row">
+                    <img src="" alt="..." class="rounded-circle col-sm-2 col-form-img" id="imgProfileConfirg2">
+                    <div class="col-sm-10">
+                      <h5 id="userConfigPass"></h5>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputPassword2" class="col-sm-2 col-form-label">Contraseña nueva</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword2">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Confirmar contraseña nueva</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword3">
+                    </div>
+                  </div>
+                
+                  <div class="form-group">
+                    <div class="text-right">
+                      <button type="button" class="btn btn-primary bg-dark" onclick="newPasswoord()">Guardar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+</div>
+
+
+<div id="containermyperfil" class="d-none">
+    <header id="header">
+
+        <nav class="menu">
+              
+          <div class="logo-box">
+              <h1 style="color: black;"><a href="#">Instagram</a></h1>
+           <span class ="btn-menu"><i class="fas fa-bars"></i></span>
+           </div>
+      
+           <div class="list-container">
+               <ul class="lists">
+              
+              <li><a href ="#" class="activo" onclick="abrirhome()"><i class="fas fa-home"></i></a></li>
+              <li><a href="#"><i class="fas fa-comments"></i></a></li>
+              <li><a href="#" onclick="abrirmyperfil()"><i class="far fa-user-circle"></i></a></li>
+              <li><a href="#"><i class="fas fa-cog"></i></a></li>
+               </ul>
+              
+      
+          </div>
+      
+          <section  class="webdesigntuts-workshop">
+              <form action="" method="">		    
+                  <input type="search" placeholder="Search...">		    	
+                  <button><i class="fas fa-search"></i></button>
+              </form>
+          </section>
+      
+      </nav>
+
+   <section class="our-projects">
+        <div class="skew-arriba"></div>
+       <div class="deg-background"></div>
+       <div class="ejeZproject">
+           <div class="container-project">
+               <div class="project-title">
+                   <h2>Heidy27</h2>
+                   <hr>
+                   <p>Ocupacion: Programadora</p> 
+                   <p>Edad: 20</p>
+                   <p>hobby: Compartir en familia</p>
+    
+                   <img class="usua" src="img/accountlogin-icon.png" alt="">
+                   <div class="col-4 rounded-circle imagenPerfil text-center">
+                    <img src="" id="perfilFoto" class="card-img mb-3 rounded-circle" alt="..." alt="" width="120" height="120">
+                    <button type="button" class="btn btn-dark" style="font-family: 'Times New Roman', Times, serif; height: -90%;" onclick="abrirConfig()" id="Editar">Editar <i class="fas fa-cog"></i></button>
+                  </div>
+               </div>
+               <div class="perfilInformación">
+                <div class="card-body">
+                  <h5 class="card-title" id="userName"></h5>
+                  <p class="card-text"><small id="correoElectronico" class="text-muted"></small></p>
+                  <p class="card-text" id="biografia"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    
+    
+             <!--   <div class="project-img">
+                   <img src="img/51584484_235806453970083_1281944735950307328_o.jpg" alt="">
+                   <img src="img/92741827_501119994105393_4064952023269769216_o.jpg" alt="">
+                   <img src="img/instagram-gradient-background-1-normal-636.png" alt="">
+                   <img src="img/WhatsApp Image 2020-07-27 at 10.49.30 PM (1).jpeg" alt="">
+                   <img src="img/geometric-yellow-violet-white-background-vector-22374073.jpg" alt="">
+                   <img src="img/textura-del-brillo-oro-aislada-en-el-fondo-blanco-amarillo-puntea-121617491.jpg" alt="">
+                   <img src="img/stxiy6mkdkvwoc4bbhuw-997x480.jpg" alt="">
+               </div>
+           </div>
+    
+       </div>
+  
+     --> -->
+    </section>
+    
+ </header>
+
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>

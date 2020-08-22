@@ -1,0 +1,440 @@
+body{
+
+ /*    background-image: url("img/stxiy6mkdkvwoc4bbhuw-997x480.jpg"); */
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgba(231, 228, 228, 0.6);
+    color: #ffffff;
+    height: 100vh;
+    width: 100%; 
+}
+#containerChat{
+    background-color: rgb(255, 255, 255);
+    margin-block: center;
+    margin: 10vh;
+    height: 80%;
+    width: 70%;
+    left: -30%;
+
+}
+
+
+.content-login{
+    margin-top: 2%;
+   color: black;
+  position: relative;
+  display: flex;
+
+}
+#form {
+   
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    padding: 40px;
+    background-color:white;
+
+   
+}
+#form h1{
+   margin-bottom: 40px;
+   font-family: 'Great Vibes', sans-serif;
+   color: black;
+
+}
+#form button{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    background-color: var(--red);
+    border: none;
+    outline: none;
+    font-family: 'Great Vibes', sans-serif;
+    color: black;
+}
+#form button:hover{
+    background-color:hsla(189, 100%, 54%, 0.973) ;
+    
+}
+
+.centerForm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+}
+
+.btn {
+    font-family:'Great Vibes', sans-serif ;
+    color: white;
+    background-color:var(--red);
+  
+}
+
+.btn:hover{
+    background-color:hsla(189, 100%, 54%, 0.973) ;
+   
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+.menu .logo-box{
+    margin-left: 20px;  
+    display: flex;
+}
+.menu .logo-box h1 a{
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--black);
+    font-family: 'Great Vibes', sans-serif;
+    
+}
+.menu .list-container{
+    margin-right: 20px;
+}
+.menu .list-container .lists{
+  display: flex;
+}
+.menu .list-container .lists li{
+    list-style: none;
+}
+.menu .list-container .lists li a{
+    text-decoration: none;
+    margin: 0px 10px;
+    padding: 8px;
+    color: black;
+    border-radius: 24px;
+    font-size: 16px;
+    transition: 0.3s;
+    
+}
+.menu .list-container .lists li a.activo{
+    background: var(--red);
+    color: #fff;
+}
+.menu .list-container .lists li a:hover{
+    background: var(--red);
+    color: #fff;
+}
+
+.webdesigntuts-workshop {
+	height: 100%;
+    position: absolute;
+	text-align: center;
+    width: 100%;
+    margin: 30px auto 0;
+    border-radius: 50px;
+    
+}
+.webdesigntuts-workshop button{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.685);
+    
+}
+  /** IMG Header **/
+
+.img-header .welcome{
+    background-color: rgb(255, 255, 255);
+    margin: 5%;
+    height: 85vh;
+    width: 60%;
+    text-align: center;
+    position: absolute;
+    left: 27vh;
+    margin-top: -50px;
+    
+    
+ 
+}
+.img-header .welcome img{
+    margin: 10%;
+    height: 60vh;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    left: -10%;
+ 
+}
+.img-header .welcome .usua{
+    border-radius: 50px;
+    width: 10%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    margin-top: -6%;
+    left: -7vh;
+
+  
+}
+.our-projects{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  
+    
+}
+
+.our-projects .usua{
+    border-radius: 100px;
+    width: 30%;
+    height: -120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: -30%;
+    left: -25vh;
+  
+}
+.our-projects .deg-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+.our-projects .ejeZproject{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.our-projects .container-project{
+  width: 90%;
+  margin: auto;
+  padding-top: 100px;
+}
+.our-projects .container-project .project-title{
+  border: 2px solid #fff;
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+.our-projects .container-project .project-title h2{
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  font-weight: normal;
+}
+.our-projects .container-project .project-title hr{
+  background: #fff;
+  width: 50%;
+  margin: 10px auto;
+}
+.our-projects .container-project .project-title p{
+    color:black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+.our-projects .container-project .project-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    padding-bottom: 100px;
+}
+.our-projects .container-project .project-img img{
+    width: calc(30% - 10px);
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.img-header .welcome h1{
+   font-size: 20px;
+   color: black;
+   font-family: 'Times New Roman', Times, serif Times, serif;
+   margin-top: -66% ;
+   
+   
+   
+   
+}
+.img-header .welcome button{
+   /*  font-size: 20px;
+    height: 5vh;
+    border: black;
+    background: none;
+    margin: 50% auto;
+    width: auto;
+    display: flex; */
+    font-size: 25px;
+    margin-top: 50% auto;
+    background-color: white;
+    border-color: white;
+    border-radius: 50px;
+    
+}
+
+.img-header .welcome button:hover{
+    background: var(--red);
+
+}
+.testimonios{
+    width: 100%;
+    margin-top: 70px;
+    
+
+}
+.testimonios .box-testimonios{
+    width: 60%;
+    margin: 6% auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 50px;
+    
+}
+
+.testimonios .box-testimonios .card-testimonio{
+    width: 15%;
+    margin: 10px;
+    height: 10%;
+  
+   
+
+}
+.testimonios .box-testimonios .card-testimonio .card-img{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.testimonios .box-testimonios .card-testimonio .card-img img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.testimonios .box-testimonios .card-testimonio .testimonio-text{
+    width: 10%;
+   
+    margin-top: 0px;
+    padding: 20px ;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 200ms;
+
+}
+.testimonios .box-testimonios .card-testimonio .testimonio-text h4{
+   color: black;
+   font-weight: normal;
+   font-size: 15px;
+   text-align: center;
+   margin-bottom: 20px;
+   transition: 200ms;
+   font-family: 'Times New Roman', Times, serif;
+position: absolute;
+   
+}  
+.testimonios .box-testimonios .card-testimonio .testimonio-text:hover h4{
+    color:rgb(255, 0, 128); ;
+}
+#containerChat{
+    color: blue;
+}
+.boton{
+    margin: -50%;
+}
+.boton:hover{
+   background-color: hsla(189, 100%, 54%, 0.973);
+}
+.modal-header{
+   color: black;
+   margin: 25px;
+   font-size: 30px;
+   font-family: 'Times New Roman', Times, serif;
+}
+.modal-body label{
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 70;
+}
+#contentConfi{
+    margin: 7%;
+    background: #fff ;  
+    height: 40%;
+    width: 25%;
+    
+ 
+}
+
+#contentConfi input{
+    color: rgb(0, 0, 0);
+    display: flex;
+    font-size: 20px;
+    background: #fff;
+    height: 70%;
+    border: none;
+   text-align: center;
+}
+
+#contentPublicaciones{
+    color: black;
+}
+
+.imagenPublicacion:hover {
+    cursor: pointer;
+}
+
+.imagenPerfil {
+    width: 200px;
+}
+
+.perfilInformación {
+    width: 300px;
+}
+
+a {
+    color: black;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #343A40;
+}
+
+.modal-dialog {
+    max-width: 600px;
+}
+
+#postPerfil .modal-content {
+    border: none;
+    background-color: transparent;
+}
+.enlaces{
+    cursor: pointer;
+}
+.enlaces:hover{
+    color:  hotpink;
+}
+.content-registrarse{
+    color: black;
+}
+#sectionPerfil{
+    color: black;
+    margin-top: 10%;
+background: white;
+}
